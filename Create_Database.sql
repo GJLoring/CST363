@@ -10,6 +10,18 @@
 /*										                                      */
 /******************************************************************************/
 
+-- ********************************************
+-- CREATE THE HOPPERAUTO DATABASE
+-- *******************************************
+
+-- create the database
+DROP DATABASE IF EXISTS hopperauto;
+CREATE DATABASE hopperauto;
+
+-- select the database
+USE hopperauto;
+
+
 CREATE TABLE CAR_OWNER(
 	OwnerID					      Int				NOT NULL auto_increment,
 	OwnerLastName			      Char(25)		    NOT NULL,
@@ -20,29 +32,28 @@ CREATE TABLE CAR_OWNER(
 	);
 
 CREATE TABLE CAR(
-	CarID					        Int				  auto_increment  NOT NULL,
+	CarID					        Int				  NOT NULL auto_increment,
 	ManufacturerName				VarChar(100)	  NOT NULL,
 	ModelName				        VarChar(100)	  NOT NULL,
-	LicencePlate				    VarChar(100)	  NOT NULL,	
-	Year				            Numeric(4,1)	  NULL,
+	LicensePlate				    VarChar(100)	  NOT NULL,	
+	Year				            Numeric(5,1)	  NULL,
 	CONSTRAINT				        CarID		      PRIMARY KEY(CarID)
 	);
 	
 CREATE TABLE APPOINTMENT(
-	ApointmentID				  Int			    NOT NULL auto_increment,
-	OwnerID					      Int				NOT NULL auto_increment,
-	CarID					      Int				auto_increment  NOT NULL,
-	ApointmentDate		          Date           	NULL,
-	CONSTRAINT				      ApointmentID		PRIMARY KEY(ApointmentID)
+	AppointmentID				  Int			    NOT NULL auto_increment,
+	OwnerID					      Int				NOT NULL,
+	CarID					      Int				NOT NULL,
+	AppointmentDate		          Date           	NULL,
+	CONSTRAINT				      AppointmentID		PRIMARY KEY(AppointmentID)
 	);
-
 
 
 CREATE TABLE Service(
 	ServiceID					    Int			    auto_increment  NOT NULL,
-	ApointmentID					Int			    auto_increment  NOT NULL,
+	AppointmentID					Int			    NOT NULL,
 	ServiceName					    Char (50)		NOT NULL,
-	SerivceCost					    Int             NOT NULL,
+	ServiceCost					    Int             NOT NULL,
 	CONSTRAINT				        ServiceID		PRIMARY KEY(ServiceID)
 	);
   
