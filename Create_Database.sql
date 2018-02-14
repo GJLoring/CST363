@@ -1,14 +1,16 @@
 /******************************************************************************/
-/*										                                      */
-/*	Hopper:													            	  */
-/*		Jose								                                  */
-/*		Grace								                                  */
-/*		Gabe								                                  */
+/*	
+/*  CST363 Introduction to Database Systems									                                      */
+/*	Hopper Team 5:													            	  */
+/*		Jose Garcia								                                  */
+/*		Grace Alvarez								                                  */
+/*		Gabriel Loring								                                  */
 /*										                                      */
 /*	Auto Repair Shop-Database Create Tables									  */
 /*										                                      */
 /*										                                      */
 /******************************************************************************/
+
 
 -- ********************************************
 -- CREATE THE HOPPERAUTO DATABASE
