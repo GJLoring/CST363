@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>InsertNewCustomer PHP Page</title>
+		<title>Insert New Car Page</title>
 		<style type="text/css">
 			h1 {text-align: center; color: blue}
 			h2 {font-family: Ariel, sans-serif; text-align: left; color: blue}
@@ -14,7 +14,7 @@
 	<?php
 		// Get connection
 		$Host = "localhost";
-		$Database = "jrj";
+		$Database = "hopperauto";
     	$User = "root";
 		$Password = "root";
 		$Port = 8889;
@@ -26,44 +26,44 @@
 
 		// Create short variable names
 
-		$LastName = $_POST["LastName"];
-		$FirstName = $_POST["FirstName"];
-		$Phone = $_POST["Phone"];
-		$Email = $_POST["Email"];
+		$ManufacturerName = $_POST["ManufacturerName"];
+		$ModelName = $_POST["ModelName"];
+		$LicensePlate = $_POST["LicensePlate"];
+		$Year = $_POST["Year"];
 
 		// Create SQL statement to INSERT new data
-		$SQLINSERT = "INSERT INTO CUSTOMER ";
-		$SQLINSERT .= "VALUES( null, '$LastName', '$FirstName', ";
-		$SQLINSERT .= "'$Phone', '$Email')";
+		$SQLINSERT = "INSERT INTO CAR ";
+		$SQLINSERT .= "VALUES( null, '$ManufacturerName', '$ModelName', ";
+		$SQLINSERT .= "'$LicensePlate', '$Year')";
 
 		// Execute SQL statement
 		$Result = $conn->query($SQLINSERT);
 
 		// Test existence of result
 		echo "<h1>
-				The James River Designs CUSTOMER Table
+				The Hopper Auto Car Table
 			</h1>
 			<hr />";
 		if ($Result){
 			echo "<h2>
-				New Customer Added:
+				New Car Added:
 			</h2>
 			<table>
 				<tr>";
 
 				echo "<tr>";
-				echo "<td>LastName:</td>";
-				echo "<td>" . $LastName . "</td>";
+				echo "<td>ManufacturerName:</td>";
+				echo "<td>" . $ManufacturerName . "</td>";
 				echo "</tr>";
 				echo "<tr>";
-				echo "<td>FirstName:</td>";
-				echo "<td>" . $FirstName . "</td>";
+				echo "<td>ModelName:</td>";
+				echo "<td>" . $ModelName . "</td>";
 				echo "</tr>";
-				echo "<td>Phone:</td>";
-				echo "<td>" . $Phone . "</td>";
+				echo "<td>LicensePlate:</td>";
+				echo "<td>" . $LicensePlate . "</td>";
 				echo "</tr>";
-				echo "<td>EmailAddress:</td>";
-				echo "<td>" . $Email . "</td>";
+				echo "<td>Year:</td>";
+				echo "<td>" . $Year . "</td>";
 				echo "</tr>";
 			echo "</table><br /><hr />";
 			}
@@ -71,8 +71,8 @@
 				exit ("Insert failed: (" . $conn->errno . ") " . $conn->error);
 			}
 
-		// Create SQL statement to read CUSTOMER table data
-    	$SQL = "SELECT * FROM CUSTOMER";
+		// Create SQL statement to read Car table data
+    	$SQL = "SELECT * FROM Car";
 
     	// Execute SQL statement
     	$res = $conn->query($SQL);
@@ -85,30 +85,30 @@
 	?>
 	    <!--  Page Headers -->
 	    <h1>
-	   		The Hopper Auto Shop CUSTOMER Table
+	   		The Hopper Auto Shop Car Table
 		</h1>
 	    <hr />
 	    <h2>
-	        CUSTOMER
+	        Car
 		</h2>
 	<?php
 		// Table headers
 	    echo "<table class='output' border='1'>
 	    		<tr>
-	    			<th>LastName</th>
-	    			<th>FirstName</th>
-	    			<th>Phone</th>
-	    			<th>Email</th>
+	    			<th>ManufacturerName</th>
+	    			<th>ModelName</th>
+	    			<th>LicensePlate</th>
+	    			<th>Year</th>
 	    		</tr>";
 
 	    // Table data
 	    while($RecordSetRow = $res->fetch_assoc() )
 	    	{
 	    	echo "<tr>";
-	       	echo "<td>" . $RecordSetRow['LastName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['FirstName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Phone'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Email'] . "</td>";
+	       	echo "<td>" . $RecordSetRow['ManufacturerName'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['ModelName'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['LicensePlate'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['Year'] . "</td>";
 	    	}
 	    echo "</table>";
 

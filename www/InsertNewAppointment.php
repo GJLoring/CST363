@@ -14,7 +14,7 @@
 	<?php
 		// Get connection
 		$Host = "localhost";
-		$Database = "jrj";
+		$Database = "hopperauto";
     	$User = "root";
 		$Password = "root";
 		$Port = 8889;
@@ -32,7 +32,7 @@
 		$Email = $_POST["Email"];
 
 		// Create SQL statement to INSERT new data
-		$SQLINSERT = "INSERT INTO CUSTOMER ";
+		$SQLINSERT = "INSERT INTO APPOINTMENT ";
 		$SQLINSERT .= "VALUES( null, '$LastName', '$FirstName', ";
 		$SQLINSERT .= "'$Phone', '$Email')";
 
@@ -72,7 +72,7 @@
 			}
 
 		// Create SQL statement to read CUSTOMER table data
-    	$SQL = "SELECT * FROM CUSTOMER";
+    	$SQL = "SELECT * FROM APPOINTMENT";
 
     	// Execute SQL statement
     	$res = $conn->query($SQL);
@@ -85,11 +85,11 @@
 	?>
 	    <!--  Page Headers -->
 	    <h1>
-	   		The Hopper Auto Shop CUSTOMER Table
+	   		The Hopper Auto Shop APPOINTMENT Table
 		</h1>
 	    <hr />
 	    <h2>
-	        CUSTOMER
+	        APPOINTMENT
 		</h2>
 	<?php
 		// Table headers

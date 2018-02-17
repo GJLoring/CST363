@@ -12,9 +12,8 @@
 	</head>
 	<body>
 	<?php
-		// Get connection
 		$Host = "localhost";
-		$Database = "jrj";
+		$Database = "hopperauto";
     	$User = "root";
 		$Password = "root";
 		$Port = 8889;
@@ -26,15 +25,14 @@
 
 		// Create short variable names
 
-		$LastName = $_POST["LastName"];
-		$FirstName = $_POST["FirstName"];
-		$Phone = $_POST["Phone"];
-		$Email = $_POST["Email"];
+		$AppointmentID = $_POST["AppointmentID"];
+		$ServiceName = $_POST["ServiceName"];
+		$ServiceCost = $_POST["ServiceCost"];
 
 		// Create SQL statement to INSERT new data
-		$SQLINSERT = "INSERT INTO CUSTOMER ";
-		$SQLINSERT .= "VALUES( null, '$LastName', '$FirstName', ";
-		$SQLINSERT .= "'$Phone', '$Email')";
+		$SQLINSERT = "INSERT INTO Service ";
+		$SQLINSERT .= "VALUES( null, '$AppointmentID', '$ServiceName', ";
+		$SQLINSERT .= "'$ServiceCost')";
 
 		// Execute SQL statement
 		$Result = $conn->query($SQLINSERT);
@@ -52,18 +50,15 @@
 				<tr>";
 
 				echo "<tr>";
-				echo "<td>LastName:</td>";
-				echo "<td>" . $LastName . "</td>";
+				echo "<td>AppointmentID:</td>";
+				echo "<td>" . $AppointmentID . "</td>";
 				echo "</tr>";
 				echo "<tr>";
-				echo "<td>FirstName:</td>";
-				echo "<td>" . $FirstName . "</td>";
+				echo "<td>ServiceName:</td>";
+				echo "<td>" . $ServiceName . "</td>";
 				echo "</tr>";
-				echo "<td>Phone:</td>";
-				echo "<td>" . $Phone . "</td>";
-				echo "</tr>";
-				echo "<td>EmailAddress:</td>";
-				echo "<td>" . $Email . "</td>";
+				echo "<td>ServiceCost:</td>";
+				echo "<td>" . $ServiceCost . "</td>";
 				echo "</tr>";
 			echo "</table><br /><hr />";
 			}
@@ -72,7 +67,7 @@
 			}
 
 		// Create SQL statement to read CUSTOMER table data
-    	$SQL = "SELECT * FROM CUSTOMER";
+    	$SQL = "SELECT * FROM Service";
 
     	// Execute SQL statement
     	$res = $conn->query($SQL);
@@ -85,30 +80,28 @@
 	?>
 	    <!--  Page Headers -->
 	    <h1>
-	   		The Hopper Auto Shop CUSTOMER Table
+	   		The Hopper Auto Shop Appointment Detail Table
 		</h1>
 	    <hr />
 	    <h2>
-	        CUSTOMER
+	        Detail
 		</h2>
 	<?php
 		// Table headers
 	    echo "<table class='output' border='1'>
 	    		<tr>
-	    			<th>LastName</th>
-	    			<th>FirstName</th>
-	    			<th>Phone</th>
-	    			<th>Email</th>
+	    			<th>AppointmentID</th>
+	    			<th>ServiceName</th>
+	    			<th>ServiceCost</th>
 	    		</tr>";
 
 	    // Table data
 	    while($RecordSetRow = $res->fetch_assoc() )
 	    	{
 	    	echo "<tr>";
-	       	echo "<td>" . $RecordSetRow['LastName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['FirstName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Phone'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Email'] . "</td>";
+	       	echo "<td>" . $RecordSetRow['AppointmentID'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['ServiceName'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['ServiceCost'] . "</td>";
 	    	}
 	    echo "</table>";
 

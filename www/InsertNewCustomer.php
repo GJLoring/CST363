@@ -14,7 +14,7 @@
 	<?php
 		// Get connection
 		$Host = "localhost";
-		$Database = "jrj";
+		$Database = "hopperauto";
     	$User = "root";
 		$Password = "root";
 		$Port = 8889;
