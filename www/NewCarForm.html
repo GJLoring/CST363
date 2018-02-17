@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>NewCustomerForm HTML Page</title>
+		<style type="text/css">
+			h1 {text-align: center; color: blue}
+			h2 {font-family: Ariel, sans-serif; text-align: left; color: blue}
+			p.footer {text-align: center}
+			table.output {font-family: Ariel, sans-serif}
+		</style>
+	</head>
+	<body>
+		<form action="InsertNewCar.php" method="POST">
+			<!--  Page Headers -->
+			<h1>
+				Hopper Auto Repair
+			</h1>
+			<hr />
+			<br />
+			<p>
+				<b>Enter Manufacturer, Model, Lic Plate and Year:</b>
+			</p>
+			<table>
+				<tr>
+					<td>&nbsp;Manufacturer:&nbsp;&nbsp;</td>
+					<td>
+						<input type="text" name="Manufacturer" size="25" />
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;Model:&nbsp;&nbsp;</td>
+					<td>
+						<input type="text" name="Model" size="25" />
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;LicPlate:&nbsp;&nbsp;</td>
+					<td>
+						<input type="text" name="LicPlate" size="12" />
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;Year:&nbsp;&nbsp;</td>
+					<td>
+						<input type="text" name="Year" size="50" />
+					</td>
+				</tr>
+			</table>
+			<br />
+			<hr />
+			<p>
+				<input type="submit" value="Add New Car" />
+				<input type="reset" value="Reset Values" />
+			</p>
+		</form>
+		<br />
+		<hr />
+		<p class="footer">
+			<a href="index.html">Return to Hopper Auto Repair Home Page</a>
+		</p>
+		<hr />
+	</body>
+</html>
+
