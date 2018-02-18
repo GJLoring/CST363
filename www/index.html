@@ -1,24 +1,95 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
+		<style>
+		
+		/* Add a black background color to the top navigation */
+		.topnav {
+			background-color: #21409A;
+			overflow: hidden;
+		}
+
+		/* Style the links inside the navigation bar */
+		.topnav a {
+			float: left;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 10px 25px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+		
+		
+				
+		.topnav ul{
+		  list-style: none;
+		  margin: 0 2px;
+		  padding: 0;
+		  display: flex;
+		  justify-content: space-around;
+		}
+		
+	   .topnav li {
+	   display: inline-block;
+	   padding: 5px 5px;
+		}
+		
+		
+
+		/* Change the color of links on hover */
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		/* Add a color to the active/current link */
+		.topnav a.active {
+			background-color: #008CFF;
+			color: white;
+		}
+
+
+		
+		</style>
+		
+		
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<title>Hopper Auto Repair Home Page</title>
+		
+		<div style="background-color:black;color:white;padding:2px; font-weight: bold;">
+		<p>CST363 Final Project Presented by Jose, Gabe, Grace</p>
+		</div>
+		
 	</head>
 	<body>
-		<h1 style="text-align: center; color: blue">
-			Hopper Auto Repair
-		</h1>
-		<p style="text-align: center; font-weight: bold">
-			Final Project
+		<p>
 		</p>
-		<p style="text-align: center; font-weight: bold">
-			Jose, Grace, Gabe
+		<div style="text-align: center">
+		<img src="HopperAutoWeb.jpg" style="float: middle;" alt="logo" height="150" width="325" />
+		</div>
+		
+		
+	
+		<p>
 		</p>
-		<hr />
-		<h2 style="text-align: center; color: blue">
-			Welcome to Hopper Auto Repair
-		</h2>
-		<hr />
+		
+		<!--
+		<div style="background-color:#21409A;color:white;padding:1px; text-align: center;">
+		<h2>Welcome to Hopper Auto Repair</h2>
+		</div>
+		-->
+		
+		<div class="topnav">
+	    <a class="active" href="index.html">Home</a>
+	    <a href="ReadService.php">Display Service Details</a>
+	    <a href="NewAppointmentForm.html">Create an Appointment</a>
+	    <a href="NewDetailForm.html">Create Service Detail</a>
+	    <a href="NewCustomerForm.html">Create Customer</a>
+		<a href="NewCarForm.html">Create Car</a>
+	    <a href="#contact">Contact</a>
+	    <a href="#about">About</a>
+	    </div>
+		
 		<p>Options:</p>
 
 		<p>Display Service Details:&nbsp;&nbsp;&nbsp;
