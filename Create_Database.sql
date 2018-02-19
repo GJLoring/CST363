@@ -38,7 +38,9 @@ CREATE TABLE CAR(
 	ManufacturerName				VarChar(100)	  NOT NULL,
 	ModelName				        VarChar(100)	  NOT NULL,
 	LicensePlate				    VarChar(100)	  NOT NULL,	
-	Year				            Numeric(5,1)	  NULL,
+	Year				            Int				  NULL,
+    Color							VarChar(100)	  NOT NULL,
+    Mileage							Int				  NOT NULL,
 	CONSTRAINT				        CarID		      PRIMARY KEY(CarID)
 	);
 	
@@ -71,12 +73,12 @@ INSERT INTO CAR_OWNER VALUES( null,'Last', 'Gabe', '555-123-4567', 'Last.Gabe@CS
 
 
 /*****   CAR DATA   ***********************************************************/
-INSERT INTO CAR VALUES(	null, "BMW",    "i7",     "B122018", 2018);
-INSERT INTO CAR VALUES(	null, "Chevy",  "Camero", "C122008", 2008);
-INSERT INTO CAR VALUES(	null, "Ford",   "F150",   "F121998", 1998);
-INSERT INTO CAR VALUES(	null, "GMC",    "Yukon",  "GA11988", 1988);
-INSERT INTO CAR VALUES(	null, "Mazda",  "Miata",  "M121978", 1978);
-INSERT INTO CAR VALUES(	null, "Toyota", "Tacoma", "T121968", 1968);
+INSERT INTO CAR VALUES(	null, "BMW",    "i7",     "B122018", 2018, "Blue", 111111);
+INSERT INTO CAR VALUES(	null, "Chevy",  "Camero", "C122008", 2008, "Red", 45000);
+INSERT INTO CAR VALUES(	null, "Ford",   "F150",   "F121998", 1998, "Black", 140000);
+INSERT INTO CAR VALUES(	null, "GMC",    "Yukon",  "GA11988", 1988, "Silver", 222222);
+INSERT INTO CAR VALUES(	null, "Mazda",  "Miata",  "M121978", 1978, "Green", 333333);
+INSERT INTO CAR VALUES(	null, "Toyota", "Tacoma", "T121968", 1968, "Gold", 444444);
 
 
 /*****  APPOINTMENT DATA   *************************************************************/
