@@ -41,7 +41,7 @@
 
 		// Test existence of result
 		echo "<h1>
-				The James River Designs CUSTOMER Table
+				The Hopper Auto Customer Table
 			</h1>
 			<hr />";
 		if ($Result){

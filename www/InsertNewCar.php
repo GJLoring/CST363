@@ -25,7 +25,6 @@
         }
 
 		// Create short variable names
-
 		$ManufacturerName = $_POST["ManufacturerName"];
 		$ModelName = $_POST["ModelName"];
 		$LicensePlate = $_POST["LicensePlate"];

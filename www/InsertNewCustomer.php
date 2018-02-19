@@ -32,7 +32,7 @@
 		$Email = $_POST["Email"];
 
 		// Create SQL statement to INSERT new data
-		$SQLINSERT = "INSERT INTO CUSTOMER ";
+		$SQLINSERT = "INSERT INTO car_owner ";
 		$SQLINSERT .= "VALUES( null, '$LastName', '$FirstName', ";
 		$SQLINSERT .= "'$Phone', '$Email')";
 
@@ -41,7 +41,7 @@
 
 		// Test existence of result
 		echo "<h1>
-				The James River Designs CUSTOMER Table
+				The Hopper Auto Customer Table
 			</h1>
 			<hr />";
 		if ($Result){
@@ -72,7 +72,7 @@
 			}
 
 		// Create SQL statement to read CUSTOMER table data
-    	$SQL = "SELECT * FROM CUSTOMER";
+    	$SQL = "SELECT * FROM car_owner";
 
     	// Execute SQL statement
     	$res = $conn->query($SQL);
@@ -105,10 +105,10 @@
 	    while($RecordSetRow = $res->fetch_assoc() )
 	    	{
 	    	echo "<tr>";
-	       	echo "<td>" . $RecordSetRow['LastName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['FirstName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Phone'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Email'] . "</td>";
+	       	echo "<td>" . $RecordSetRow['OwnerLastName'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['OwnerFirstName'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['OwnerPhone'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['OwnerEmail'] . "</td>";
 	    	}
 	    echo "</table>";
 
