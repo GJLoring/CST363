@@ -3,7 +3,7 @@ Uses a JOIN to return matching data from the appointment table, car table, car_o
  */
 
 CREATE VIEW AppointmentDetail AS
-select OwnerLastName, OwnerFirstName, OwnerPhone, OwnerEmail, AppoinmentDate, ServiceName, ServiceCost, ManufacturerName,ModelName,LicencePlate,Year
+select OwnerLastName, OwnerFirstName, OwnerPhone, OwnerEmail, AppointmentDate, ServiceName, ServiceCost, ManufacturerName,ModelName,LicensePlate,Year
 from car_owner c inner join appointment a inner join service s inner join car v
 where s.AppointmentID = a.AppointmentID and
 a.OwnerID = c.OwnerID and
@@ -26,4 +26,4 @@ Search for appointments by License
 */
 Select * from
 AppointmentDetail
-where LicencePlate = "T121968";
+where LicensePlate = "T121968";
