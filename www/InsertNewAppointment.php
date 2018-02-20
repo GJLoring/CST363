@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>InsertNewCustomer PHP Page</title>
+		<title>InsertNewAppointment PHP Page</title>
 		<style type="text/css">
 			h1 {text-align: center; color: blue}
 			h2 {font-family: Ariel, sans-serif; text-align: left; color: blue}
@@ -26,45 +26,43 @@
 
 		// Create short variable names
 
-		$LastName = $_POST["LastName"];
-		$FirstName = $_POST["FirstName"];
-		$Phone = $_POST["Phone"];
-		$Email = $_POST["Email"];
+		$OwnerID = $_POST["OwnerID"];
+		$CarID = $_POST["CarID"];
+		$AppointmentDate = $_POST["AppointmentDate"];
+		
 
 		// Create SQL statement to INSERT new data
 		$SQLINSERT = "INSERT INTO APPOINTMENT ";
-		$SQLINSERT .= "VALUES( null, '$LastName', '$FirstName', ";
-		$SQLINSERT .= "'$Phone', '$Email')";
+		$SQLINSERT .= "VALUES( null, '$OwnerID', ";
+		$SQLINSERT .= "'$CarID', '$AppointmentDate')";
 
 		// Execute SQL statement
 		$Result = $conn->query($SQLINSERT);
 
 		// Test existence of result
 		echo "<h1>
-				The Hopper Auto Customer Table
+				The Hopper Auto Appointment Table
 			</h1>
 			<hr />";
 		if ($Result){
 			echo "<h2>
-				New Customer Added:
+				New Appointment Added:
 			</h2>
 			<table>
 				<tr>";
 
 				echo "<tr>";
-				echo "<td>LastName:</td>";
-				echo "<td>" . $LastName . "</td>";
+				echo "<td>OwnerID:</td>";
+				echo "<td>" . $OwnerID . "</td>";
 				echo "</tr>";
 				echo "<tr>";
-				echo "<td>FirstName:</td>";
-				echo "<td>" . $FirstName . "</td>";
+				echo "<td>CarID:</td>";
+				echo "<td>" . $CarID . "</td>";
 				echo "</tr>";
-				echo "<td>Phone:</td>";
-				echo "<td>" . $Phone . "</td>";
+				echo "<td>AppointmentDate:</td>";
+				echo "<td>" . $AppointmentDate . "</td>";
 				echo "</tr>";
-				echo "<td>EmailAddress:</td>";
-				echo "<td>" . $Email . "</td>";
-				echo "</tr>";
+				
 			echo "</table><br /><hr />";
 			}
 			else {
@@ -95,20 +93,19 @@
 		// Table headers
 	    echo "<table class='output' border='1'>
 	    		<tr>
-	    			<th>LastName</th>
-	    			<th>FirstName</th>
-	    			<th>Phone</th>
-	    			<th>Email</th>
+	    			<th>OwnerID</th>
+	    			<th>CarID</th>
+	    			<th>AppointmentDate</th>
+	    			
 	    		</tr>";
 
 	    // Table data
 	    while($RecordSetRow = $res->fetch_assoc() )
 	    	{
 	    	echo "<tr>";
-	       	echo "<td>" . $RecordSetRow['LastName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['FirstName'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Phone'] . "</td>";
-	    	echo "<td>" . $RecordSetRow['Email'] . "</td>";
+	       	echo "<td>" . $RecordSetRow['OwnerID'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['CarID'] . "</td>";
+	    	echo "<td>" . $RecordSetRow['AppointmentDate'] . "</td>";
 	    	}
 	    echo "</table>";
 

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>InsertNewCustomer PHP Page</title>
+		<title>InsertNewDetail PHP Page</title>
 		<style type="text/css">
 			h1 {text-align: center; color: blue}
 			h2 {font-family: Ariel, sans-serif; text-align: left; color: blue}
@@ -44,7 +44,7 @@
 			<hr />";
 		if ($Result){
 			echo "<h2>
-				New Customer Added:
+				New Service Added:
 			</h2>
 			<table>
 				<tr>";
