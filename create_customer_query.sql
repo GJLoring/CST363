@@ -1,5 +1,5 @@
 /*
-Inserts a customer into the car_owner table and then displays all the cars associated with the user
+Inserts a customer into the car_owner table and then displays all appointments associated with the user
  */
 
 INSERT INTO car_owner values(null 'LastName', 'FirstName', 'Phone', 'Email');
